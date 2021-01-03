@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg==" crossorigin="anonymous" />
+<section>
+  <div class="track-container">
+    <div class="tracking-section">
+      <div class="order-info">
+        <h1>Track delivery status</h1>
+        <div class="order-id"><%= JSON.stringify(order._id) %></div>
+      </div>
+
+      <div class="order-carrier" hidden data-order="<%= JSON.stringify(order) %>"></div>
+
+      <ul class="order-status">
+        <li><i class="icon las la-clipboard-check"></i>Order-placed</li>
+        <li><i class="icon las la-thumbs-up"></i>Received</li>
+        <li><i class="icon las la-cookie"></i>Prepared</li>
+        <li><i class="icon las la-shipping-fast"></i>On the way</li>
+        <li><i class=" icon las la-hourglass-end"></i>Completed</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+<script src="/js/customer/track.js"></script>

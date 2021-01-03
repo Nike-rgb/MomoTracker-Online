@@ -1,0 +1,8 @@
+[{
+  "name": "Margherita",
+  "image": "logo.svg",
+  "price": "250",
+  "size": "small"
+},
+]
+//add more items like above to your database with collection name 'Menus'

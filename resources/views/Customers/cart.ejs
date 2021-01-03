@@ -1,0 +1,53 @@
+<% if(!cart){ %>
+  <div class="cart-empty">
+   <h1>Cart Empty :( </h1>
+   <p>Your cart is empty. To add momos, go to the main
+    page.
+   </p>
+   <div class="img-wrapper">
+    <img src="img/empty-cart.jpg">
+    <a href="/">Go back</a>
+   </div>
+  </div>
+<% } else { %>
+  <div class="cart-nonempty">
+   <div class="counter-container">
+    <h1>Order Summary</h1>
+    <% Object.values(cart.items).forEach(obj => { %>
+     <div style="position : relative; transition : transform 3s ease, opacity 2s ease;" class="counter grid grid-cols-4 gap-6">
+       <div data-id = "<%= obj.item._id %>" class="dismissOrderIcon" style="position : absolute; right : 0; color : orange; font-size : 20px;">
+         <i class="fas fa-window-close"></i>
+       </div>
+     <div class="pizza-display col-span-2">
+      <img src="/img/<%= obj.item.image %>">
+      <span class="pizza-name"> <%= obj.item.name %> </span>
+      <span class="pizza-size"><%= obj.item.size %></span>
+    </div>
+
+    <div class="pizza-number">
+      <%= obj.qty %>
+    </div>
+
+    <div class="pizza-price">
+      <%= obj.item.price %>
+    </div>
+
+   </div>
+<% }) %>
+    <div class="total">
+     Total Amount:<b> <span class="total-price"> <%= cart.totalPrice %> </span></b>
+    </div>
+
+    <% if(user) { %>
+    <form action="/order" method="POST" class="address">
+      <input type="text" class="order-address" name ="address" placeholder="Address" required>
+      <button type="submit">Order Now</button>
+    </form>
+    <% } else { %>
+    <div class="not-logged-in-msg">You are not logged in. <a href="/login">Login</a> or <a href="/register">Sign Up</a> to place an order.</div>
+    <% } %>
+   </div>
+  </div>
+<% } %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg==" crossorigin="anonymous" />
+<script src="/js/customer/cart.js"></script>

@@ -1,0 +1,44 @@
+<section class="orders light-section">
+  <h1 class="font-bold text-lg mb-4" style="text-align:center; color:cadetblue; margin:3px;">All orders</h1>
+  <div class ="auth-error"><%= messages.error %></div>
+
+  <div class="table-container">
+    <div class="grid grid-cols-8 order-thead">
+      <div class="col-span-3">Orders</div>
+      <div class="col-span-1">Customer</div>
+      <div class="col-span-1">Address</div>
+      <div class="col-span-2">Status</div>
+      <div class="col-span-1">Time</div>
+    </div>
+
+    <% orders.forEach(order => { %>
+      <div class="grid grid-cols-8 order-row">
+        <div class="col-span-3">
+          <ul>
+            <li> <%= order._id %></li>
+            <% Object.values(order.items).forEach(pizza => { %>
+              <li> <%= pizza.item.name %> </li>
+            <% }); %>
+          </ul>
+        </div>
+        <div class="col-span-1"><%= order.customer.name %></div>
+        <div class="col-span-1"><%= order.address %></div>
+        <div style="position : relative" class="col-span-2">
+          <select class="select" data-order-id="<%= order._id %>">
+          <% orderStatus.forEach(status => { %>
+            <% if(status == order.status) { %>
+              <option selected><%= status %></option>
+              <% } else { %>
+                <option value="<%= status %>"><%= status %></option>
+                <% } %>
+          <% }); %>
+          </select>
+          <span style="position : absolute; top : 42%; left : 48%;">
+            <i style="font-size : 26px; color : orange" class="lab la-centercode"></i>
+          </span>
+        </div>
+        <div class="col-span-1"><%= moment(order.createdAt).format('hh : mm A') %></div>
+      </div>
+    <% }); %>
+</section>
+<script src="/js/admin/adminOrders.js"></script>

@@ -1,0 +1,25 @@
+
+     <div class="intro-container">
+       <img class="banner" src="/img/momo.svg" alt="Banner image of a pizza">
+       <div class="caption">
+         Are you hungry?
+         <h1>Don't wait!</h1>
+         <a href="/customers/orders" class="order">Order now</a>
+       </div>
+     </div>
+
+     <div class="menu-container">
+        <h2>All Momos</h2>
+        <div class="menu grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6">
+<% pizzas.forEach((item) =>{ %>
+          <div class="menu-item">
+            <img src="img/<%= item.image %>" >
+            <span class="item-name"> <%= item.name %> </span>
+            <span class="item-price"> <%= item.price %> </span>
+            <button data-pizza="<%= JSON.stringify(item) %>" class="add-to-cart" href="">+  Add</button>
+           </div>
+<% }); %>
+         </div>
+       </div>
+
+       <script src="/js/index.js"></script>

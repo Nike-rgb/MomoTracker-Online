@@ -1,0 +1,41 @@
+<script src="/js/css.js"></script> <!--stylesheet js file -->
+
+<section class="orders light-section">
+    <h1 style="text-align : center; color : gray; " class="font-bold text-lg mb-4">All orders</h1>
+    <div class ="auth-error"><%= messages.error %></div>
+    <% if(messages.success) { %>
+    <div id="success-alert" class="flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3"
+    role="alert">
+    <% } %>
+    <p> <%= messages.success %> </p>
+   </div>
+
+   <div class="order-thead grid grid-cols-7">
+     <div style="border-left : 0;" class="col-span-2">Order Id</div>
+     <div class="col-span-2">Orders</div>
+     <div>Status</div>
+     <div>Address</div>
+     <div>Ordered at</div>
+    </div>
+
+    <% orders.forEach(order => { %>
+      <div class="grid grid-cols-7 order-row">
+        <div style="border-left : 0;" class="col-span-2"><a style="text-decoration : none ; color : orange;" href="/customers/orders/<%= order._id %>"><%=order._id %></a> </div>
+        <div class="col-span-2">
+          <ul>
+            <% Object.values(order.items).forEach(pizza => { %>
+              <li><%= pizza.item.name %></li>
+          <% }) %>
+          </ul>
+        </div>
+        <div><%= order.status %></div>
+        <div><%= order.address %></div>
+        <div><%= moment(order.createdAt).format('hh : mm A') %></div>
+       </div>
+    <% }) %>;
+
+
+
+
+
+</section>
