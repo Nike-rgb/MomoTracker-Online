@@ -36,9 +36,9 @@
 
 </section>
 
-<section class="orders-small">
+<section style="padding-top:20px" class="orders-small">
   <% orders.forEach(order => { %>
-    <div style="font-size: 13px; margin : 6px auto; border-bottom : 1px solid gray; width : 60%; ">
+    <div style="font-size: 13px; margin : 6px auto; border-bottom : 1px solid gray; width : 70%; ">
       <ul>
         <li><a style="text-decoration : none ; color : orange;" href="/customers/orders/<%= order._id %>"><%=order._id %></a></li>
         <li>Items:
