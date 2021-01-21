@@ -19,6 +19,7 @@ body {
   font-family: "Lato", "sans-serif";
   -webkit-font-smoothing: antialiased;
   color: #232323;
+  width : 100%;
 }
 
 nav {
@@ -101,9 +102,9 @@ position:relative;
 
 .banner {
   position: absolute;
-  right: -23%;
+  right: 0%;
   top: 14%;
-  width: 90%;
+  width: 34%;
   height: 79%;
 }
 
@@ -483,6 +484,10 @@ position: absolute;
   transform : scale(1.2);
 }
 
+.orders-small{
+  display : none;
+}
+
 .order-status li:before{
   content : '';
   background : black;
@@ -503,4 +508,156 @@ position: absolute;
     right: 92px;
     top: 10px;
     position: absolute;
+}
+
+
+@media screen and (max-width : 650px) {
+  .menu-item .item-price{
+    text-align: center;
+  }
+  .banner {
+    right: 1%;
+   top: 41%;
+   width: 43%;
+   height: 180px;
+ }
+
+ .order-status{
+   margin : 0;
+   left : 0;
+   width : 100%;
+   top : 5%;
+ }
+
+ .order-info{
+   padding : 10px;
+ }
+
+ .order-info h1{
+   position: static;
+   font-size : 14px;
+ }
+
+ .order-info .order-id{
+   position: static;
+   font-size : 13px;
+ }
+
+ .tracking-section{
+   padding-top : 36px;
+ }
+
+ .order-status li {
+   font-size: 13px;
+   margin : 30px;
+ }
+
+ .tracking-container{
+   height : 450px;
+ }
+
+ .tracking-section{
+   width : 100%;
+ }
+
+ .orders-small{
+   display: block;
+ }
+ .success-alert{
+   font-size: 14px;
+ }
+ .orders{
+   display : none;
+ }
+ .auth-error{
+   font-size: 13px;
+ }
+  .caption{
+    font-size: 14px;
+    top: 17%;
+    left: 4%;
+}
+.order{
+  width : 50%;
+}
+.caption h1{
+  font-size : 35px;
+}
+.intro-container{
+  height : 50%;
+}
+.menu-container h2{
+  font-size : 20px;
+}
+.menu-item img{
+  height : 90px;
+}
+.menu-item .item-name{
+  font-size : 14px;
+}
+.logo-wrapper img{
+  margin: 5px;
+    display: inline;
+    height: 100px;
+}
+.logo-wrapper{
+  position : static;
+  text-align : center;
+  display : block;
+}
+.logo-wrapper span{
+  position: static;
+}
+.nav-wrapper{
+  display: block;
+  text-align: center;
+  position: static;
+}
+.cart-nonempty h1{
+  font-size: 16px;
+}
+.not-logged-in-msg{
+  font-size: 14px;
+  padding: 0;
+}
+.pizza-name, .pizza-size, .pizza-number, .pizza-price{
+  font-size: 14px;
+}
+.cart-nonempty{
+  min-height : 0;
+}
+.sign-in-msg{
+  font-size : 16px;
+}
+
+.login-container input, .register-container input{
+  padding: 5px;
+    font-size: 13px;
+    margin: 20px auto;
+}
+.login-button{
+  font-size : 14px;
+}
+.address input{
+  width : 60%;
+}
+.address button{
+  font-size: 13px;
+}
+.logged-in-name{
+  font-size: 13px;
+  top: 5%;
+}
+.cart-empty p{
+  font-size : 14px;
+}
+.cart-empty h1{
+  font-size: 20px;
+}
+.cart-empty a{
+  font-size: 13px;
+}
+.forgot-pw{
+  font-size: 15px;
+}
 }

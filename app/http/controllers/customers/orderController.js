@@ -28,11 +28,12 @@ function orderController() {
         const orders = await Order.find({customer : req.user._id}).populate('customer').sort({'createdAt' : -1});
         res.render('Customers/Order', {
           title : "Your orders-Momos'",
-          orders : orders,
+          orders,
           moment : moment,
       });
     } catch (err) {
           if(err) {
+            throw err;
             return res.redirect('/customers/orders');
           }
         }

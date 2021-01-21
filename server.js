@@ -47,7 +47,7 @@ app.use(session({
   resave : false,
   store : mongoStore,
   saveUninitialized : false,
-  cookie : {maxAge : 1000 * 60 * 60 * 4,} // 4 hours
+  cookie : {maxAge : 1000 * 60 * 60 * 4, sameSite : true, httpOnly : true} // 4 hours
 }));
 
 //setting up the passport js

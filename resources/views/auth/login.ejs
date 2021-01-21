@@ -5,36 +5,23 @@
 <script src="/js/css.js"></script> <!--stylesheet js file -->
 
 <div class="login-container">
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-500 flex items-center justify-center bg-gray-50 py-5 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full">
     <div>
-      <img class="mx-auto h-12 w-auto" src="img/logo.svg" alt="Workflow">
-      <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+      <img class="mx-auto h-12 w-auto" src="img/logo.svg" alt="Logo image">
+      <h2 class="sign-in-msg mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
         Sign in to your account
       </h2>
     </div>
-    <form class="mt-8" action="/login" method="POST">
+    <form  action="/login" method="POST">
       <div class="rounded-md shadow-sm">
         <div class ="auth-error"><%= messages.error %></div>
         <div>
-          <input aria-label="Email addres" name="email" type="email" value="<%=messages.email%>" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address">
+          <input aria-label="Email addres" name="email" type="email" value="<%=messages.email%>" required class="login-input appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address">
         </div>
         <div class="-mt-px">
-          <input aria-label="Password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password">
+          <input aria-label="Password" name="password" type="password" required class="login-input appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password">
         </div>
-      </div>
-
-      <div class="mt-6 flex items-center justify-between">
-        <div class="flex items-center">
-          <input id="remember_me" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
-          <label for="remember_me" class="ml-2 block text-sm leading-5 text-gray-900">
-            Remember me
-          </label>
-        </div>
-
-        <a class="forgot-pw">
-          Forgot your password?
-        </a>
       </div>
 
       <div class="mt-6">

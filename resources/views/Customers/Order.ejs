@@ -34,8 +34,24 @@
        </div>
     <% }) %>;
 
+</section>
 
-
-
-
+<section class="orders-small">
+  <% orders.forEach(order => { %>
+    <div style="font-size: 13px; margin : 6px auto; border-bottom : 1px solid gray; width : 60%; ">
+      <ul>
+        <li><a style="text-decoration : none ; color : orange;" href="/customers/orders/<%= order._id %>"><%=order._id %></a></li>
+        <li>Items:
+          <ul>
+            <% Object.values(order.items).forEach(pizza => { %>
+              <li><%= pizza.item.name %></li>
+            <% }) %>
+          </ul>
+        </li>
+        <li><%= order.status %></li>
+        <li><%= order.address %></li>
+        <li><%= moment(order.createdAt).format('hh : mm A') %></li>
+      </ul>
+    </div>
+  <% }); %>
 </section>
