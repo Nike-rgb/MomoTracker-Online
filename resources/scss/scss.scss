@@ -617,9 +617,13 @@ position: absolute;
   font-size: 16px;
 }
 .not-logged-in-msg{
-  font-size: 12px;
+  font-size: 14px;
   padding: 0;
 }
+.total{
+  font-size: 14px;
+}
+
 .pizza-name, .pizza-size, .pizza-number, .pizza-price{
   font-size: 14px;
 }
@@ -659,5 +663,11 @@ position: absolute;
 }
 .forgot-pw{
   font-size: 15px;
+}
+.total-counter{
+  padding : 2px;
+}
+.nav-wrapper ul li{
+  padding : 1px;
 }
 }
