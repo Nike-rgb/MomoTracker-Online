@@ -40,7 +40,7 @@ function changeOrderStatus(event) {
       chosen.previousElementSibling.selected = true;
     }
 
-    if(res.data.completed) return slideAndFade(target.parentElement.parentElement);
+    if(res.data.completed) return slideAndFade(target.parentElement.parentElement.parentElement);
     icon.style.animation = "none";
     icon.style.color = "#4BB543";
     setTimeout(() => {

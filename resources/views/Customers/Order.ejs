@@ -37,9 +37,9 @@
 </section>
 
 <section style="padding-top:20px" class="orders-small">
-  <div style="text-align:center; font-size : 12px; color:#4BB543;"> Click on the order id(orange) to track that order.</div>
+  <div style="text-align:center; font-size : 14px; color:#4BB543;"> Click on the order id(orange) to track that order.</div>
   <% orders.forEach(order => { %>
-    <div style="font-size: 10px; margin : 6px auto; border-bottom : 1px solid gray; width : 90%; ">
+    <div style="font-size: 13px; margin : 6px auto; border-bottom : 1px solid gray; width : 90%; ">
       <ul>
         <li><a style="text-decoration : none ; color : orange;" href="/customers/orders/<%= order._id %>"><%=order._id %></a></li>
         <li>Items:
